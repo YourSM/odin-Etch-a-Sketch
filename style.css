@@ -1,0 +1,8 @@
+.masterContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.gridContainer {
+  display: flex;
+}
