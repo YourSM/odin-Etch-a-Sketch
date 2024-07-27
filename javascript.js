@@ -20,21 +20,25 @@ for (let i = 0; i < size; i++) {
     row.style.flex = "1"
     column.appendChild(row);
     row.addEventListener("mouseover", () => {
-      row.style.backgroundColor = "black"
+    row.style.backgroundColor = "black"
   })
     }
     interface.appendChild(gridContainer);
   }
 }
 
-createGrid(16);
-
 newGrid.addEventListener("click", () => {
   let columns = document.querySelectorAll(".column")
-  columns.forEach((item) => {
+  input = prompt("Please choose a value of 100 or below to create a grid!")
+  if (input === null || input > 100) {
+    alert("Invalid Value. Please try again!")
+    return
+    } else {
+     columns.forEach((item) => {
     item.remove();
-  })
-  createGrid(prompt())
+    })
+  }
+  createGrid(input)
 })
 
-
+createGrid(16);
