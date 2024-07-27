@@ -1,8 +1,18 @@
-.masterContainer {
+body {
+  box-sizing: border-box;
+}
+
+
+.interface {
   display: flex;
   flex-direction: row;
+
 }
 
 .gridContainer {
   display: flex;
+  flex-direction: column;
+  width: 960px;
+  height: 960px;
+  flex: 1
 }
