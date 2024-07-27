@@ -1,5 +1,5 @@
 const rowContainer = document.querySelector(".horizontalContainer");
-const masterContainer = document.querySelector(".masterContainer");
+const interface = document.querySelector(".interface");
 const gridContainer = document.querySelector(".gridContainer");
 
 function createGrid(size) {
@@ -15,7 +15,7 @@ for (let i = 0; i < size; i++) {
     row.style.height = "20px";
     column.appendChild(row);
     }
-    masterContainer.appendChild(gridContainer);
+    interface.appendChild(gridContainer);
   }
 }
 
