@@ -16,3 +16,18 @@ body {
   height: 960px;
   flex: 1
 }
+
+.header {
+  text-align: center;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px
+}
