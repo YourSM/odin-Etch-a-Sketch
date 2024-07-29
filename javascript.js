@@ -4,40 +4,40 @@ const newGrid = document.querySelector("#newGrid");
 const RGBMode = document.querySelector("#RGBMode");
 const blackoutMode = document.querySelector("#blackoutMode");
 
-function createGrid(size) {
-for (let i = 0; i < size; i++) {
-  const row = document.createElement("div");
-  row.classList.add("row");
-  gridContainer.appendChild(row);
-  row.style.border = "2px solid black";
-  row.style.display = "flex";
-  row.style.flex = "1";
-  for (let i = 0; i < size; i++) {
-    let cell = document.createElement("div");
-    cell.classList.add("cell");
-    cell.style.border = "2px solid black";
-    cell.style.minWidth = "10px";
-    cell.style.minHeight = "10px";
-    cell.style.flex = "1";
-    row.appendChild(cell);
-    cell.addEventListener("mouseover", () => {
-    cell.style.backgroundColor = "black";
-  })
+  function createGrid(size) {
+    for (let i = 0; i < size; i++) {
+      const row = document.createElement("div");
+      row.classList.add("row");
+      gridContainer.appendChild(row);
+      row.style.border = "2px solid black";
+      row.style.display = "flex";
+      row.style.flex = "1";
+      for (let i = 0; i < size; i++) {
+        let cell = document.createElement("div");
+        cell.classList.add("cell");
+        cell.style.border = "2px solid black";
+        cell.style.minWidth = "10px";
+        cell.style.minHeight = "10px";
+        cell.style.flex = "1";
+        row.appendChild(cell);
+        cell.addEventListener("mouseover", () => {
+        cell.style.backgroundColor = "black";
+      })
+        }
+        interface.appendChild(gridContainer);
+      }
+      addRGB();
+      addBlackout();
     }
-    interface.appendChild(gridContainer);
-  }
-  addRGB();
-  addBlackout();
-}
 
 newGrid.addEventListener("click", () => {
-  let columns = document.querySelectorAll(".column");
+  let rows = document.querySelectorAll(".row");
   input = prompt("Please choose a value of 100 or below to create a grid!");
   if (input === null || input > 100) {
     alert("Invalid Value. Please try again!");
     return
     } else {
-     columns.forEach((item) => {
+     rows.forEach((item) => {
     item.remove();
     })
   }
@@ -56,11 +56,11 @@ function getRGBValues () {
 }
 
 function addRGB () {
-  const rows = document.querySelectorAll(".row")
+  const cells = document.querySelectorAll(".cell")
   RGBMode.addEventListener("click", () => {  
-    rows.forEach((row) => {
-    row.addEventListener("mouseover", () => {
-      row.style.backgroundColor = getRGBValues()
+    cells.forEach((cell) => {
+    cell.addEventListener("mouseover", () => {
+      cell.style.backgroundColor = getRGBValues()
       })
     }) 
   })
@@ -76,10 +76,10 @@ function lowerOpacity(target) {
 }
 
 function addBlackout () {
-  const rows = document.querySelectorAll(".row");
+  const cells = document.querySelectorAll(".cell");
   blackoutMode.addEventListener("click", () => {
-    rows.forEach((row) => {
-      row.addEventListener("mouseenter", (event) => {
+    cells.forEach((cell) => {
+      cell.addEventListener("mouseenter", (event) => {
       let target = event.target;
           let = target.style.opacity = lowerOpacity(target);
       })
