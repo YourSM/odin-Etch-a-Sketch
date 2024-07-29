@@ -6,22 +6,22 @@ const blackoutMode = document.querySelector("#blackoutMode");
 
 function createGrid(size) {
 for (let i = 0; i < size; i++) {
-  const column = document.createElement("div");
-  column.classList.add("column");
-  gridContainer.appendChild(column);
-  column.style.border = "2px solid black";
-  column.style.display = "flex";
-  column.style.flex = "1";
+  const row = document.createElement("div");
+  row.classList.add("row");
+  gridContainer.appendChild(row);
+  row.style.border = "2px solid black";
+  row.style.display = "flex";
+  row.style.flex = "1";
   for (let i = 0; i < size; i++) {
-    let row = document.createElement("div");
-    row.classList.add("row");
-    row.style.border = "2px solid black";
-    row.style.minWidth = "10px";
-    row.style.minHeight = "10px";
-    row.style.flex = "1";
-    column.appendChild(row);
-    row.addEventListener("mouseover", () => {
-    row.style.backgroundColor = "black";
+    let cell = document.createElement("div");
+    cell.classList.add("cell");
+    cell.style.border = "2px solid black";
+    cell.style.minWidth = "10px";
+    cell.style.minHeight = "10px";
+    cell.style.flex = "1";
+    row.appendChild(cell);
+    cell.addEventListener("mouseover", () => {
+    cell.style.backgroundColor = "black";
   })
     }
     interface.appendChild(gridContainer);
