@@ -9,7 +9,6 @@ const blackoutMode = document.querySelector("#blackoutMode");
       const row = document.createElement("div");
       row.classList.add("row");
       gridContainer.appendChild(row);
-      row.style.border = "2px solid black";
       row.style.display = "flex";
       row.style.flex = "1";
       for (let i = 0; i < size; i++) {
